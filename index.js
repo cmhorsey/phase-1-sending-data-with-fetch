@@ -12,10 +12,18 @@ function submitData(name, email) {
         'Accept': 'application/json',
       },
       body:JSON.stringify(userData)
-    }).then(res => res.json()).then(appendData)
+    })
+    .then(res => res.json())
+    .then(appendUserId)
+    .catch(appendError)
 }
 
-function appendData(userData) {
+function appendUserId(userData) {
   const body = document.querySelector('body');
   body.innerHTML = userData.id
+}
+
+function appendError() {
+  const body = document.querySelector('body');
+  body.innerHTML = 'Unauthorized Access'
 }
