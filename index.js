@@ -1,5 +1,4 @@
 function submitData(name, email) {
-
   const userData = {
     name: `${name}`,
     email: `${email}`,
